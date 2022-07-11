@@ -31,7 +31,13 @@ let data = [
 
   const tooltips = document.querySelectorAll('.card-spend-tooltip')
   const graphs = document.querySelectorAll('.card-spend-graph')
+  let amounts = data.map((e) => e.amount)
   for(let i = 0; i < data.length; i++) {
-      tooltips[i].innerHTML = 'R$' + data[i]['amount']
-      graphs[i].style.height = `${data[i]['amount']}%`
-  }
+        tooltips[i].innerHTML = `R$${data[i]['amount']}`.replace('.', ',')
+        graphs[i].style.height = `${data[i]['amount']}%`
+        let valorToolTip = tooltips[i].innerHTML.replace(',', '.').replace('R$', '')
+        if(valorToolTip == Math.max(...amounts)) graphs[i].classList.add('active')
+  
+    }
+
+  

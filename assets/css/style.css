@@ -9,3 +9,162 @@
     --very-pale-color: hsl(33, 100%, 98%);
     --common-ff: 'DM Sans', sans-serif;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--very-pale-color);
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--common-ff);
+    width: 400px;
+}
+
+.card-balance {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--soft-red-color);
+    border-radius: 10px;
+}
+
+.card-balance-text {
+    color: var(--cream-color)
+}
+.card-balance-amount {
+    color: white;
+    font-size: 25px;
+}
+
+.card-spending {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--cream-color);
+}
+
+.card-spending-title {
+    color: var(--dark-brown-color);
+}
+
+.card-expenses {
+    display: flex;
+    justify-content: space-between;
+    height: 170px;
+    margin-top: 1.5rem;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--cream-color);
+    text-align: center;
+}
+
+.card-spend-month {
+    color: var(--medium-brown-color);
+    font-size: 13px;
+}
+
+.card-spending-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    align-items: flex-end;
+}
+
+.card-month-text {
+    font-size: 13px;
+    color: var(--medium-brown-color);
+}
+
+.card-month-balance {
+    color: var(--dark-brown-color);
+    font-size: 25px;
+}
+
+.card-last-month-percent {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: end;
+
+    color: var(--dark-brown-color);
+}
+
+.card-last-month-text {
+    color: var(--medium-brown-color);
+    font-size: 11px;
+}
+
+.active {
+    background-color: var(--cyan-color);
+}
+
+.card-spend {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: end;
+}
+
+.card-spend-graph {
+    height: 100%;
+    border-radius: 3px;
+    width: 35px;
+    background-color: var(--soft-red-color);
+    transition: .2s;
+}
+
+.card-spend-tooltip {
+    padding: .2rem .3rem;
+    color: white;
+    background-color: black;
+    font-size: 9px;
+    border-radius: 3px;
+    margin-bottom: .3rem;
+    opacity: 0;
+    transition: .2s;
+    position: relative;
+    top: -2%;
+    left: -9%;
+}
+
+.card-spend:hover .card-spend-tooltip {
+    opacity: 1;
+}
+
+.card-spend-graph:hover {
+    background-color: hsl(10, 79%, 78%);
+}
+
+.card-spend-graph.active {
+    background-color: var(--cyan-color);
+}
+
+.card-spend-graph.active:hover {
+    background-color: hsl(186, 34%, 71%);
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        position: static;
+        transform: none;
+        width: 90%;
+    }
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-spending-title {
+        font-size: 18px;
+    }
+}

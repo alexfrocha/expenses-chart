@@ -112,6 +112,7 @@ body {
     flex-direction: column;
     position: relative;
     justify-content: end;
+    align-items: center;
 }
 
 .card-spend-graph {
@@ -123,7 +124,7 @@ body {
 }
 
 .card-spend-tooltip {
-    padding: .2rem .3rem;
+    padding: .4rem .5rem;
     color: white;
     background-color: black;
     font-size: 9px;
@@ -131,9 +132,6 @@ body {
     margin-bottom: .3rem;
     opacity: 0;
     transition: .2s;
-    position: relative;
-    top: -2%;
-    left: -9%;
 }
 
 .card-spend:hover .card-spend-tooltip {

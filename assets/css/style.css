@@ -162,6 +162,10 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+    .card-spend {
+        width: 20px;
+    }
     .card-spending-title {
         font-size: 18px;
     }
